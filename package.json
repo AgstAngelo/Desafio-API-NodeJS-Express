@@ -1,0 +1,28 @@
+{
+  "name": "desafio-api-nodejs-express",
+  "version": "1.0.0",
+  "description": "Desafio Prático 3 (em grupo) do processo de formação Gama Academy turma 46",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgstAngelo/Desafio-API-NodeJS-Express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AgstAngelo/Desafio-API-NodeJS-Express/issues"
+  },
+  "homepage": "https://github.com/AgstAngelo/Desafio-API-NodeJS-Express#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
