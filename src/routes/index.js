@@ -6,4 +6,9 @@ routes.get("/", (req, res) => {
   res.send("Olá mundo!");
 })
 
+routes.post("/cadastrar", (req, res) => {
+  console.log(req.body);
+  res.json(req.body);
+})
+
 module.exports = routes;

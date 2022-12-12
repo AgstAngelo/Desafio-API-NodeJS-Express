@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/AgstAngelo/Desafio-API-NodeJS-Express#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.27.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
