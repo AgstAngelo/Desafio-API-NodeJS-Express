@@ -1,6 +1,6 @@
 const atendimentoController = {
-  listaratendimentos: (req, res) => {
-    res.json(
+  listaratendimentos: async (req, res) => {
+    await res.json(
       [
         {nome: "Augusto", email: "agstpalasios@gmail.com", apresentacao: "sou eu mesmo."},
         {nome: "João", email: "joao@gmail.com", apresentacao: "não sou eu."}
