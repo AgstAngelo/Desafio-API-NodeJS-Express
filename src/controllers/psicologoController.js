@@ -1,3 +1,5 @@
+const Psicologos = require('../models/Psicologos');
+
 const psicologoController = {
   listarPsicologos: (req, res) => {
     res.json(
