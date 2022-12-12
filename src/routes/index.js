@@ -2,6 +2,7 @@ const express = require('express');
 const psicologoController = require('../controllers/psicologoController');
 const pacienteController = require('../controllers/pacientesController');
 const atendimentoController = require('../controllers/atendimentoController');
+
 const routes = express.Router();
 
 //Rotas psicologos
@@ -22,14 +23,5 @@ routes.delete("/pacientes/deletar/:id", pacienteController.deletarPaciente);
 routes.get("/atendimentos", atendimentoController.listaratendimentos);
 routes.get("/atendimentos/:id", atendimentoController.atendimentoPorId);
 routes.post("/atendimentos/novo", atendimentoController.cadastrarAtendimento);
-
-routes.get("/", (req, res) => {
-  res.send("Olá mundo!");
-})
-
-routes.post("/cadastrar", (req, res) => {
-  console.log(req.body);
-  res.json(req.body);
-})
 
 module.exports = routes;

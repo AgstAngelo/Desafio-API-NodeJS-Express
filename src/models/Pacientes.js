@@ -16,6 +16,12 @@ const Pacientes = db.define("Pacientes",
     },
     idade: {
       type: DataTypes.INTEGER
+    },
+    createdAt: {
+      type: DataTypes.DATE
+    },
+    updatedAt: {
+      type: DataTypes.DATE
     }
   },
   {
