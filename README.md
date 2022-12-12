@@ -9,4 +9,5 @@ Construção de uma API utilizando Node.js e Express, e banco de dados MySQL, cr
   - instalação dos frameworks necessários para desenvolvimento do projeto (atualizado periodicamente):
     - Express
     - nodemon (dev)
-    - ...
+    - sequelize
+    
