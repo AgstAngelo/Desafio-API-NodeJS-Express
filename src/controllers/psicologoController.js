@@ -2,6 +2,10 @@ const Psicologos = require('../models/Psicologos');
 const bcrypt = require('bcrypt');
 
 const psicologoController = {
+  loginPsicologo: async (req, res) => {
+    //TODO
+  },
+
   listarPsicologos: async (req, res) => {
     try {
       const listaPsicologos = await Psicologos.findAll();

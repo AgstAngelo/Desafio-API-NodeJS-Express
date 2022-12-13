@@ -32,7 +32,7 @@ CREATE TABLE `pacientes` (
   `email` VARCHAR(50) NOT NULL,
   `idade` INT NOT NULL,
   `createdAt` DATE NOT NULL,
-  `updateAt` DATE NOT NULL,
+  `updatedAt` DATE NOT NULL,
   PRIMARY KEY (`id`)
 );
 ```
