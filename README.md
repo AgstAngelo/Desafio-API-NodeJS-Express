@@ -35,4 +35,17 @@ CREATE TABLE `pacientes` (
   `updatedAt` DATE NOT NULL,
   PRIMARY KEY (`id`)
 );
+
+CREATE TABLE `atendimentos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `paciente` int NOT NULL,
+  `psicologo` int NOT NULL,
+  `data_atendimento` date NOT NULL,
+  `observacao` varchar(150) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `psicologo_idx` (`psicologo`),
+  KEY `paciente` (`paciente`),
+  CONSTRAINT `paciente` FOREIGN KEY (`paciente`) REFERENCES `pacientes` (`id`),
+  CONSTRAINT `psicologo` FOREIGN KEY (`psicologo`) REFERENCES `psicologos` (`id`)
+);
 ```
