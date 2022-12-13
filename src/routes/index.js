@@ -8,20 +8,20 @@ const routes = express.Router();
 //Rotas psicologos
 routes.get("/psicologos", psicologoController.listarPsicologos);
 routes.get("/psicologos/:id", psicologoController.psicologoPorId);
-routes.post("/psicologos/novo", psicologoController.cadastrarPsicologo);
-routes.put("/psicologos/atualizar/:id", psicologoController.atualizarPsicologo);
-routes.delete("/psicologos/deletar/:id", psicologoController.deletarPsicologo);
+routes.post("/psicologos", psicologoController.cadastrarPsicologo);
+routes.put("/psicologos/:id", psicologoController.atualizarPsicologo);
+routes.delete("/psicologos/:id", psicologoController.deletarPsicologo);
 
 //Rotas pacientes
 routes.get("/pacientes", pacienteController.listarPacientes);
 routes.get("/pacientes/:id", pacienteController.pacientePorId);
-routes.post("/pacientes/novo", pacienteController.cadastrarPaciente);
-routes.put("/pacientes/atualizar/:id", pacienteController.atualizarPaciente);
-routes.delete("/pacientes/deletar/:id", pacienteController.deletarPaciente);
+routes.post("/pacientes", pacienteController.cadastrarPaciente);
+routes.put("/pacientes/:id", pacienteController.atualizarPaciente);
+routes.delete("/pacientes/:id", pacienteController.deletarPaciente);
 
 //Rotas atendimentos
 routes.get("/atendimentos", atendimentoController.listaratendimentos);
 routes.get("/atendimentos/:id", atendimentoController.atendimentoPorId);
-routes.post("/atendimentos/novo", atendimentoController.cadastrarAtendimento);
+routes.post("/atendimentos", atendimentoController.cadastrarAtendimento);
 
 module.exports = routes;
