@@ -45,7 +45,6 @@ const psicologoController = {
     } catch (error) {
       console.log(error);
     }
-
   },
 
   atualizarPsicologo: async (req, res) => {

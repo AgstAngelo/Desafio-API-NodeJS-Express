@@ -11,3 +11,28 @@ Construção de uma API utilizando Node.js e Express, e banco de dados MySQL, cr
     - nodemon (dev)
     - sequelize
     
+Script gerador do banco:
+```
+CREATE DATABASE la_vie_db;
+
+CREATE TABLE `psicologos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `senha` varchar(70) NOT NULL,
+  `apresentacao` varchar(150) DEFAULT NULL,
+  `createdAt` date NOT NULL,
+  `updatedAt` date NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `pacientes` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(50) NOT NULL,
+  `idade` INT NOT NULL,
+  `createdAt` DATE NOT NULL,
+  `updateAt` DATE NOT NULL,
+  PRIMARY KEY (`id`)
+);
+```
