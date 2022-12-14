@@ -8,7 +8,10 @@ const Atendimentos = db.define("Atendimentos",
       primaryKey: true,
       autoIncrement: true
     },
-    paciente_id: {
+    paciente: {
+      type: DataTypes.INTEGER
+    },
+    psicologo: {
       type: DataTypes.INTEGER
     },
     data_atendimento: {

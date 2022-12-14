@@ -1,11 +1,15 @@
+const jwt = require("jsonwebtoken");
+const secret = require("../configs/secret");
+
 const Atendimentos = require('../models/Atendimentos');
+const Pacientes = require('../models/Pacientes');
 
 const atendimentoController = {
   listaratendimentos: async (req, res) => {
     try {
       const listarAtendimentos = await Atendimentos.findAll();
       
-      res.json(listarAtendimentos);
+      res.status(200).json(listarAtendimentos);
       
     } catch (error) {
       console.log(error);  
@@ -18,7 +22,7 @@ const atendimentoController = {
 
       const atendimento = await Atendimentos.findByPk(id);
   
-      res.json(atendimento);
+      res.status(200).json(atendimento);
       
     } catch (error) {
       console.log(error);  
@@ -29,16 +33,19 @@ const atendimentoController = {
     try {
       const { token, paciente, data_atendimento, observacao } = req.body;
       
-      //recuperar o id do psicologo com o token
+      const decoded = jwt.verify(token, secret.key);
+      const { dataValues } = await Pacientes.findByPk(paciente);
 
-      const novoAtendimento = await Atendimentos.create({
-      paciente,
-      psicologo,
-      data_atendimento,
-      observacao
-     });
-
-     res.json(novoAtendimento);
+      if(decoded && dataValues){
+        const novoAtendimento = await Atendimentos.create({
+          paciente: dataValues.id,
+          psicologo: decoded.id,
+          data_atendimento,
+          observacao
+        });
+        
+        res.status(201).json(novoAtendimento);
+      }
     
     } catch (error) {
       console.log(error);

@@ -2,15 +2,12 @@ const Psicologos = require('../models/Psicologos');
 const bcrypt = require('bcrypt');
 
 const psicologoController = {
-  loginPsicologo: async (req, res) => {
-    //TODO
-  },
 
   listarPsicologos: async (req, res) => {
     try {
       const listaPsicologos = await Psicologos.findAll();
       
-      res.json(listaPsicologos);
+      res.status(200).json(listaPsicologos);
       
     } catch (error) {
       console.log(error);  
@@ -24,7 +21,7 @@ const psicologoController = {
       const psicologo = await Psicologos.findByPk(id);
       delete psicologo.senha;
   
-      res.json(psicologo);
+      res.status(200).json(psicologo);
       
     } catch (error) {
       console.log(error);  
@@ -44,7 +41,7 @@ const psicologoController = {
       apresentacao
      });
      
-     res.json(novoPsicologo);
+     res.status(201).json(novoPsicologo);
     
     } catch (error) {
       console.log(error);
@@ -68,7 +65,7 @@ const psicologoController = {
 
       await psicologo.save();
 
-      res.json(psicologo);
+      res.status(200).json(psicologo);
 
     } catch (error) {
       console.log(error);
@@ -83,7 +80,7 @@ const psicologoController = {
 
       await psicologo.destroy();
 
-      res.json(psicologo);
+      res.status(204);
 
     } catch (error) {
       console.log(error);

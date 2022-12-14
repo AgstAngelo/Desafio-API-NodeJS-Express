@@ -6,7 +6,7 @@ const authLoginValidation = require('../validations/auth/login');
 const requestLog = require('../middlewares/requestLog');
 const auth = require('../middlewares/auth');
 const authController = require('../controllers/authController');
-const atendimentoController = require('../controllers/atendimentoControllers');
+
 const routes = express.Router();
 
 routes.post('/login', authLoginValidation, authController.login);

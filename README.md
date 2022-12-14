@@ -42,6 +42,8 @@ CREATE TABLE `atendimentos` (
   `psicologo` int NOT NULL,
   `data_atendimento` date NOT NULL,
   `observacao` varchar(150) NOT NULL,
+  `createdAt` date NOT NULL,
+  `updatedAt` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `psicologo_idx` (`psicologo`),
   KEY `paciente` (`paciente`),

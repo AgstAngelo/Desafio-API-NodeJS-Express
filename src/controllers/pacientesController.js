@@ -5,7 +5,7 @@ const pacienteController = {
     try {
       const listarPacientes = await Pacientes.findAll();
       
-      res.json(listarPacientes);
+      res.status(200).json(listarPacientes);
       
     } catch (error) {
       console.log(error);  
@@ -18,7 +18,7 @@ const pacienteController = {
 
       const paciente = await Pacientes.findByPk(id);
   
-      res.json(paciente);
+      res.status(200).json(paciente);
       
     } catch (error) {
       console.log(error);  
@@ -35,7 +35,7 @@ const pacienteController = {
       idade
      });
 
-     res.json(novoPaciente);
+     res.status(201).json(novoPaciente);
     
     } catch (error) {
       console.log(error);
@@ -57,7 +57,7 @@ const pacienteController = {
 
       await paciente.save();
 
-      res.json(paciente);
+      res.status(200).json(paciente);
 
     } catch (error) {
       console.log(error);
@@ -72,7 +72,7 @@ const pacienteController = {
 
       await paciente.destroy();
 
-      res.json(paciente);
+      res.status(204);
 
     } catch (error) {
       console.log(error);
