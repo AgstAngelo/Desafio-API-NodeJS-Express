@@ -2,8 +2,14 @@ const express = require('express');
 const psicologoController = require('../controllers/psicologoController');
 const pacienteController = require('../controllers/pacientesController');
 const atendimentoController = require('../controllers/atendimentoController');
-
+const authLoginValidation = require('../validations/auth/login');
+const requestLog = require('../middlewares/requestLog');
+const auth = require('../middlewares/auth');
+const authController = require('../controllers/authController');
+const atendimentoController = require('../controllers/atendimentoControllers');
 const routes = express.Router();
+
+routes.post('/login', authLoginValidation, authController.login);
 
 //Rotas psicologos
 routes.get("/psicologos", psicologoController.listarPsicologos);
