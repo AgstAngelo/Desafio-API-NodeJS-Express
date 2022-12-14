@@ -2,13 +2,17 @@ const express = require('express');
 const psicologoController = require('../controllers/psicologoController');
 const pacienteController = require('../controllers/pacientesController');
 const atendimentoController = require('../controllers/atendimentoController');
+const dashboardController = require('../controllers/dashboardController');
+const authController = require('../controllers/authController');
+
 const authLoginValidation = require('../validations/auth/login');
 const requestLog = require('../middlewares/requestLog');
 const auth = require('../middlewares/auth');
-const authController = require('../controllers/authController');
+
 
 const routes = express.Router();
 
+//Rota para Login
 routes.post('/login', authLoginValidation, authController.login);
 
 //Rotas psicologos
@@ -29,5 +33,11 @@ routes.delete("/pacientes/:id", pacienteController.deletarPaciente);
 routes.get("/atendimentos", atendimentoController.listaratendimentos);
 routes.get("/atendimentos/:id", atendimentoController.atendimentoPorId);
 routes.post("/atendimentos", atendimentoController.cadastrarAtendimento);
+
+//Rotas opcionais (dashboard)
+routes.get("/dashboard/total_pacientes", dashboardController.totalDePacientes);
+routes.get("/dashboard/total_atendimentos", dashboardController.totalDeAtendimentos);
+routes.get("/dashboard/total_psicologos", dashboardController.totalDePsicologos);
+// routes.post("/dashboard/media_atendimentos", dashboardController.mediaDeAtendimentos);
 
 module.exports = routes;
