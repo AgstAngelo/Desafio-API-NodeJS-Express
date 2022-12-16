@@ -1,4 +1,4 @@
-const Psicologos = require('../models/Psicologos');
+const { Psicologos } = require('../models');
 const bcrypt = require('bcrypt');
 
 const psicologoController = {
@@ -52,8 +52,9 @@ const psicologoController = {
     try {
       const { id } = req.params;
       const { nome, email, senha, apresentacao } = req.body;
-  
+
       const psicologo = await Psicologos.findByPk(id);
+
       const novaSenha = await bcrypt.hash(senha, 10);
 
       psicologo.set({
@@ -80,7 +81,7 @@ const psicologoController = {
 
       await psicologo.destroy();
 
-      res.status(204);
+      res.status(204).json("Dados do banco removidos.");
 
     } catch (error) {
       console.log(error);

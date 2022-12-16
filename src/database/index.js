@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 const sequelize = require('sequelize');
 
-const DB_NAME = "la_vie_db";
+const DB_NAME = "lavie_db";
 const DB_USER = "root";
 const DB_PASS = "mysql";
 const DB_CONFIG = {

@@ -1,14 +1,16 @@
 const express = require('express');
+
+//Controladores
 const psicologoController = require('../controllers/psicologoController');
 const pacienteController = require('../controllers/pacientesController');
 const atendimentoController = require('../controllers/atendimentoController');
 const dashboardController = require('../controllers/dashboardController');
 const authController = require('../controllers/authController');
 
+//Login e Middlewares
 const authLoginValidation = require('../validations/auth/login');
 const requestLog = require('../middlewares/requestLog');
 const auth = require('../middlewares/auth');
-
 
 const routes = express.Router();
 
@@ -38,6 +40,6 @@ routes.post("/atendimentos", atendimentoController.cadastrarAtendimento);
 routes.get("/dashboard/total_pacientes", dashboardController.totalDePacientes);
 routes.get("/dashboard/total_atendimentos", dashboardController.totalDeAtendimentos);
 routes.get("/dashboard/total_psicologos", dashboardController.totalDePsicologos);
-// routes.post("/dashboard/media_atendimentos", dashboardController.mediaDeAtendimentos);
+routes.post("/dashboard/media_atendimentos", dashboardController.mediaDeAtendimentos);
 
 module.exports = routes;

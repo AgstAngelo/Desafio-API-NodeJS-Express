@@ -1,8 +1,8 @@
 const jwt = require("jsonwebtoken");
 const secret = require("../configs/secret");
 
-const Atendimentos = require('../models/Atendimentos');
-const Pacientes = require('../models/Pacientes');
+const { Atendimentos, Pacientes } = require('../models');
+
 
 const atendimentoController = {
   listaratendimentos: async (req, res) => {
