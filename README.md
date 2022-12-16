@@ -10,4 +10,12 @@ Construção de uma API utilizando Node.js e Express, e banco de dados MySQL, cr
     - Express
     - nodemon (dev)
     - sequelize
+    - bcrypt
+    - express-validation
+    - express-jwt
+    - jsonwebtoken
+    - mysql2
+
+A documentação da API pode ser encontrada pelo link:
+https://documenter.getpostman.com/view/23768937/2s8YzXwLBJ
     

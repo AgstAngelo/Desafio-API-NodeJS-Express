@@ -1,6 +1,5 @@
-const Psicologos = require('../models/Psicologos');
-const Pacientes = require('../models/Pacientes');
-const Atendimentos = require('../models/Atendimentos');
+const { Psicologos, Pacientes, Atendimentos } = require('../models');
+
 
 const atendimentoController = {
   totalDePacientes: async (req, res) => {
@@ -37,10 +36,10 @@ const atendimentoController = {
     }
   },
 
-  mediaDeAtendimentos: async(req, res) => {
+  mediaDeAtendimentos: async (req, res) => {
     try {
-      
-    
+
+
     } catch (error) {
       console.log(error);
     }
